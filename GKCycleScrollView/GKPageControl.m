@@ -184,6 +184,19 @@
     }];
 }
 
+- (void)setPageIndicatorTintColor:(UIColor *)pageIndicatorTintColor {
+    [super setPageIndicatorTintColor:pageIndicatorTintColor];
+    if (self.style == GKPageControlStyleSizeDot) {
+        self.pageDotView.pageIndicatorColor = pageIndicatorTintColor;
+    }
+}
+
+- (void)setCurrentPageIndicatorTintColor:(UIColor *)currentPageIndicatorTintColor {
+    if (self.style == GKPageControlStyleSizeDot) {
+        self.pageDotView.currentPageIndicatorColor = currentPageIndicatorTintColor;
+    }
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     
